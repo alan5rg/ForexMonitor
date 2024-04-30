@@ -1,0 +1,50 @@
+"""
+    
+    Forex Market Monitor
+    (show at one screen the relevantest market's on the World)
+    
+    #self.versionado=[pre.v.9.6]
+    #18.03.2024:
+            El absurdo mundo observa como Gecko hace a su voluntad el destino causal
+        con sucesos acausales y por completo inesperados por la provabilidad y estadistica.
+            * Agregar funcion para configurar hora de apertura y cierre de cada mercado
+        desde la app...
+            * implementar barras de progreso que se vallan consumiendo a medida que se acerque
+        la hora de cierre de cada mercado y/o cuenta regresiva hasta que habra cada mercado.
+    #19.03.2024:
+            Listo con las barras de progreso, quedó lindo, ya cambié el slider por una progressbar
+        asimismo se agrego la cuenta regresiva de minutos para la apertura.
+            Evaluar mismo error:
+            Traceback (most recent call last):
+            File "/home/alan/Visual Studio Python/fclock/clock/fc94.py", line 264, in update_markets
+            self.update_progress_bars(market, timezone, hora, minuto)
+            File "/home/alan/Visual Studio Python/fclock/clock/fc94.py", line 296, in update_progress_bars
+            fraction = remain_close_minutes / total_out_market_minutes
+            UnboundLocalError: local variable 'remain_close_minutes' referenced before assignment
+            #se cambio la logica del if dentro del if
+    #20.03.2024
+            Listo, sin errores, agregué el horario de apertura y de cierre del mercado sobre cada
+        uno de los relojes analogicos y fue un quilombo entenderme con la IA.
+            Hoy mismo intente con la IA crear un menu para configurar parametros y guardarlos en
+        un diccionario de configuracion, al final nos entendimos, pero siento que no es tan buena
+        programando, genera errores muy groseros de todo tipo e incluso complejidades en el codigo
+        completamente innecesarias, lo que dificulta aun mas encontrar errores y depurar el codigo
+
+    #self.versionado=[v.9.7]
+    #23.03.2024
+            Se contemplan los fines de semana como días de mercado cerrado, cosa completamente lógica
+        que no se tuvo en cuenta antes ni por la IA ni por mí.
+            Se agrega etiqueta inferior que muestra el nombre del día de la semana
+
+    #self.versionado=[v.9.8]
+    #24.03.2024
+            Se empiezan a integrar metodos y clases para manejo de configuración...
+            Ya es posible configurar horarios de mercado, el diccionario de los mismos queda guardado
+        en un archivo de configuración en formato Json.
+            Se crea un diccionario de colores de la aplicación en el archivo de configuración, se 
+        cargan en el inicio del programa junto a los horarios del mercado desde el archivo de
+        configuración o diccionario por defecto.
+            Se coloca la barra de menu dentro de un layout inferior.
+            Se ajustan colores por defecto de la aplicación.
+
+"""
